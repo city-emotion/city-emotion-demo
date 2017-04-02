@@ -5,9 +5,25 @@
         <button md-menu-item> Settings </button>
         <button md-menu-item> Help </button>
     </md-menu>
-
     <button md-icon-button [mdMenuTriggerFor]="appMenu">
         <md-icon>more_vert</md-icon>
     </button>
 </md-toolbar>
 <div id="map_container"></div>
+<md-card id="example-card">
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title>Shiba Inu</md-card-title>
+    <md-card-subtitle>Dog Breed</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="assets/img/examples/shiba2.jpg">
+  <md-card-content>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+</md-card>
+<button id="emotion_but" md-fab>
+    <md-icon class="md-48">face</md-icon>
+</button>
