@@ -24,6 +24,18 @@ var calmness=create_emotion(calmness_raw,"#33a6b8");
 var relaxation=create_emotion(relaxation_raw,"f7d947");
 var anxiety=create_emotion(anxiety_raw,"#f7572f");
 var worry=create_emotion(worry_raw,"#fcfaf2");
+function show_emotion(emotion_list)
+{
+    for(var i = 0; i < emotion_list.length; i++)
+        emotion_list[i].show();
+}
+function hide_emotion(emotion_list)
+{
+    for(var i = 0; i < emotion_list.length; i++)
+        emotion_list[i].hide();
+}
+
+
 var map_object;
 
 window.onload = function(){
