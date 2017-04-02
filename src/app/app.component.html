@@ -1,29 +1,50 @@
 <md-toolbar id="top_navi" color="primary">
-    <span>{{title}}</span>
-    <span class="spacer"></span>
-    <md-menu #appMenu="mdMenu">
-        <button md-menu-item> Settings </button>
-        <button md-menu-item> Help </button>
-    </md-menu>
-    <button md-icon-button [mdMenuTriggerFor]="appMenu">
-        <md-icon>more_vert</md-icon>
-    </button>
+  <span>{{title}}</span>
+  <span class="spacer"></span>
+  <md-menu #appMenu="mdMenu">
+    <button md-menu-item> Settings </button>
+    <button md-menu-item> Help </button>
+  </md-menu>
+  <button md-icon-button [mdMenuTriggerFor]="appMenu">
+    <md-icon>more_vert</md-icon>
+  </button>
 </md-toolbar>
 <div id="map_container"></div>
 <md-card id="example-card">
   <md-card-header>
-    <div md-card-avatar class="example-header-image"></div>
-    <md-card-title>Shiba Inu</md-card-title>
-    <md-card-subtitle>Dog Breed</md-card-subtitle>
+    <md-card-title>Emotion Dimensions</md-card-title>
+    <md-card-subtitle>Hangzhou, China</md-card-subtitle>
   </md-card-header>
-  <img md-card-image src="assets/img/examples/shiba2.jpg">
   <md-card-content>
+    <div>
+      <div class="left-row">
+        <md-slide-toggle class="toggle-emotion" id="toggle-happiness">
+          Happiness
+        </md-slide-toggle>
+        <md-slide-toggle class="toggle-emotion" id="toggle-calmness">
+          Calmness
+        </md-slide-toggle>
+        <md-slide-toggle class="toggle-emotion" id="toggle-anxiety">
+          Anxiety
+        </md-slide-toggle>
+      </div>
+      <div class="right-row">
+        <md-slide-toggle class="toggle-emotion" id="toggle-relaxation">
+          Relaxation
+        </md-slide-toggle>
+        <md-slide-toggle class="toggle-emotion" id="toggle-worry">
+          Worry
+        </md-slide-toggle>
+      </div>
+    </div>
   </md-card-content>
   <md-card-actions>
-    <button md-button>LIKE</button>
-    <button md-button>SHARE</button>
+    <div id="share">
+      <button md-button>LIKE</button>
+      <button md-button>SHARE</button>
+    </div>
   </md-card-actions>
 </md-card>
-<button id="emotion_but" md-fab>
+<button id="emotion-but" md-fab>
     <md-icon class="md-48">face</md-icon>
 </button>
