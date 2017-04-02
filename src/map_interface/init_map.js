@@ -1,19 +1,21 @@
-var map_object = {};
+var map_object;
+
+var happiness_raw = [[120.2, 30.25, 1000], [120.23, 30.2, 100]];
+
 
 window.onload = function(){
     function init_map() {
-        map_object.dom = document.getElementById("map_container");
-        map_object.dom.style.height
+        document.getElementById("map_container").style.height
             = window.innerHeight - document.getElementById("top_navi").offsetHeight + "px";
-        map_object.obj = new qq.maps.Map(map_object.dom, {
-            center: new qq.maps.LatLng(39.916527,116.397128), 
-            zoom:8
+        map_object = new AMap.Map("map_container",{
+            resizeEnable: true, zoom: 10, center:[120.2,30.25]
         });
+        map_object.setMapStyle("blue_night");
     }
     init_map();
 }
 
 window.onresize = function(){
-    map_object.dom.style.height
-            = window.innerHeight - document.getElementById("top_navi").offsetHeight + "px";
+    document.getElementById("map_container").style.height
+        = window.innerHeight - document.getElementById("top_navi").offsetHeight + "px";
 }
