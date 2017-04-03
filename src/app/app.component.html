@@ -18,21 +18,21 @@
   <md-card-content>
     <div>
       <div class="left-row">
-        <md-slide-toggle class="toggle-emotion" id="toggle-happiness">
+        <md-slide-toggle class="toggle-emotion" (change)="toggleHappiness()">
           Happiness
         </md-slide-toggle>
-        <md-slide-toggle class="toggle-emotion" id="toggle-calmness">
+        <md-slide-toggle class="toggle-emotion">
           Calmness
         </md-slide-toggle>
-        <md-slide-toggle class="toggle-emotion" id="toggle-anxiety">
+        <md-slide-toggle class="toggle-emotion">
           Anxiety
         </md-slide-toggle>
       </div>
       <div class="right-row">
-        <md-slide-toggle class="toggle-emotion" id="toggle-relaxation">
+        <md-slide-toggle class="toggle-emotion">
           Relaxation
         </md-slide-toggle>
-        <md-slide-toggle class="toggle-emotion" id="toggle-worry">
+        <md-slide-toggle class="toggle-emotion">
           Worry
         </md-slide-toggle>
       </div>
