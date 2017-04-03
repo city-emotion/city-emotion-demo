@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>City Emotion Demo</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-    <body>
-    
-    </body>
+
+<head>
+    <title>City Emotion Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=0cbdd5372598ad308f0c50435293e012"></script>
+</head>
+
+<body>
+    <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/ui-objects.js"></script>
+    <script type="text/javascript" src="js/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <nav>
+        <div class="nav-wrapper" id="top_navi">
+            <a class="brand-logo left">City Emotion</a>
+            <ul id="nav-mobile" class="right">
+                <li>
+                    <a class="dropdown-button btn waves-effect waves-light z-depth-0 transparent" data-activates='dropdown-navi'>
+                            About
+                        </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="map_container"></div>
+    <ul id='dropdown-navi' class='dropdown-content'>
+        <li><a href="#!">About</a></li>
+        <li><a href="#!">Repo</a></li>
+    </ul>
+    <a id="emotion-but" class="btn-floating btn-large waves-effect waves-light red" onclick="$('#card-out').toggle(200)"><i class="material-icons">face</i></a>
+    <div id="card-out">
+        <div class="card hoverable" id="emotion-card">
+            <div class="card-content">
+                <span class="card-title">Hangzhou, China</span>
+                <div class="switch">
+                    <label>
+                        Happy<input type="checkbox" checked="true" onchange="toggle_emotion('happiness')">
+                        <span class="lever"></span>
+                    </label>
+                    <label>
+                        Relaxed<input type="checkbox" onchange="toggle_emotion('relaxation')">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+                <div class="switch">
+                    <label>
+                        Calm<input type="checkbox" onchange="toggle_emotion('calmness')">
+                        <span class="lever"></span>
+                    </label>
+                    <label>
+                        Anxious<input type="checkbox" onchange="toggle_emotion('anxiety')">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+                <div class="switch">
+                    <label>
+                        Worry<input type="checkbox" onchange="toggle_emotion('worry')">
+                        <span class="lever"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="card-action">
+                <a href="https://en.wikipedia.org/wiki/Hangzhou">About City</a>
+            </div>
+        </div>
+    </div>
+    <script>$('#card-out').hide();</script>
+</body>
+
 </html>

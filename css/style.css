@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    display: block;
+    overflow: hidden;
+}
+
+.brand-logo{
+    margin-left: 20px;
+    font-weight: 300;
+}
+
+#map_container{
+    min-width: 200px;
+    width: 100%;
+    min-height: 100px;
+}
+
+#emotion-but{
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+}
+
+#emotion-card{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+}
+
+.switch{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.left-row{
+    position: relative;
+    top: 0;
+    float: left;
+    margin: 10px;
+}
+
+.right-row{
+    position: relative;
+    top: 0;
+    float: right;
+    margin: 10px;
+}
+
+#share{
+    position: relative;
+    float: left;
+}

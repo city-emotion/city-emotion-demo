@@ -21,20 +21,20 @@ function create_emotion(loc_list, color){
 }
 var happiness=create_emotion(happiness_raw,"#db4d6d");
 var calmness=create_emotion(calmness_raw,"#33a6b8");
-var relaxation=create_emotion(relaxation_raw,"f7d947");
+var relaxation=create_emotion(relaxation_raw,"#f7d947");
 var anxiety=create_emotion(anxiety_raw,"#f7572f");
 var worry=create_emotion(worry_raw,"#fcfaf2");
-var shownEmotion={happiness:false,calmness:false,relaxation:false,anxiety:false,worry:false};
-function toggle_happiness() {
-    if(shownEmotion[happiness]){
-    shownEmotion[happiness] = false;
-    for(var i = 0; i < happiness.length; i++)
-        happiness[i].hide();
+var shown_emotion={happiness:false,calmness:false,relaxation:false,anxiety:false,worry:false};
+function toggle_emotion(_emotion) {
+    if(shown_emotion[_emotion]){
+        shown_emotion[_emotion] = false;
+        for(var i = 0; eval("i <"+_emotion+".length"); i++)
+            eval(_emotion + "[i].hide()");
     }
     else{
-        shownEmotion[happiness] = true;
-        for(var i = 0; i < happiness.length; i++)
-            happiness[i].show();
+        shown_emotion[_emotion] = true;
+        for(var i = 0; eval("i <"+_emotion+".length"); i++)
+            eval(_emotion + "[i].show()");
     }
 }
 
@@ -61,6 +61,7 @@ window.onload = function(){
             worry[i].setMap(map_object);
             worry[i].hide();
         }
+        toggle_emotion('happiness');
     }
     init_map();
 }
