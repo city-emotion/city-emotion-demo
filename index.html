@@ -14,10 +14,9 @@
 <body>
     <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/Chart.bundle.min.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <nav>
-        <div class="nav-wrapper" id="top_navi">
+        <div class="nav-wrapper cyan darken-3" id="top_navi">
             <a class="brand-logo left">City Emotion</a>
             <ul id="nav-mobile" class="right">
                 <li>
@@ -30,14 +29,15 @@
     </nav>
     <div id="map_container"></div>
     <ul id='dropdown-navi' class='dropdown-content'>
-        <li><a href="#!">About</a></li>
-        <li><a href="#!">Repo</a></li>
+        <li><a onclick="Materialize.toast('City Emotion Demo, Celestial Phineas @ ZJU (●\'ω\'●)丿❤', 4000, 'rounded')">About</a></li>
+        <li><a href="https://github.com/celestialphineas/city-emotion-demo" target="_blank">Repo</a></li>
     </ul>
-    <a id="emotion-but" class="btn-floating btn-large waves-effect waves-light red" onclick="$('#card-out').toggle(200)"><i class="material-icons">face</i></a>
+    <a id="emotion-but" class="btn-floating btn-large waves-effect waves-light red hoverable" onclick="$('#card-out').toggle(200)"><i class="material-icons">face</i></a>
     <div id="card-out">
         <div class="card hoverable" id="emotion-card">
             <div class="card-content">
                 <span class="card-title">Hangzhou, China</span>
+                <embed src="img/radar.svg" width="250" height="230" type="image/svg+xml"/>
                 <div class="switch">
                     <label>
                         Happy<input type="checkbox" checked="true" onchange="toggle_emotion('happiness')">
@@ -66,11 +66,10 @@
                 </div>
             </div>
             <div class="card-action">
-                <a href="https://en.wikipedia.org/wiki/Hangzhou">About City</a>
+                <a href="https://en.wikipedia.org/wiki/Hangzhou" target="_blank">About City</a>
             </div>
         </div>
     </div>
-    <script>$('#card-out').hide();</script>
 </body>
 
 </html>
