@@ -43,7 +43,7 @@ var map_object;
 window.onload = function(){
     function init_map() {
         document.getElementById("map_container").style.height
-            = window.innerHeight - document.getElementById("top_navi").offsetHeight + "px";
+            = window.innerHeight-document.getElementById("top_navi").offsetHeight+5+"px";
         map_object = new AMap.Map("map_container",{
             resizeEnable: true, zoom: 10, center:[120.2,30.25]
         });
@@ -68,6 +68,6 @@ window.onload = function(){
 
 window.onresize = function(){
     document.getElementById("map_container").style.height
-        = window.innerHeight - document.getElementById("top_navi").offsetHeight + "px";
+         = window.innerHeight-document.getElementById("top_navi").offsetHeight+5+"px";
 }
 

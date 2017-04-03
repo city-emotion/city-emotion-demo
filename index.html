@@ -15,7 +15,8 @@
     <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
-    <nav>
+    <div id="map_container"></div>
+    <nav class="z-depth-2">
         <div class="nav-wrapper cyan darken-3" id="top_navi">
             <a class="brand-logo left">City Emotion</a>
             <ul id="nav-mobile" class="right">
@@ -27,48 +28,84 @@
             </ul>
         </div>
     </nav>
-    <div id="map_container"></div>
     <ul id='dropdown-navi' class='dropdown-content'>
         <li><a onclick="Materialize.toast('City Emotion Demo, Celestial Phineas @ ZJU (●\'ω\'●)丿❤', 4000, 'rounded')">About</a></li>
         <li><a href="https://github.com/celestialphineas/city-emotion-demo" target="_blank">Repo</a></li>
     </ul>
-    <a id="emotion-but" class="btn-floating btn-large waves-effect waves-light red hoverable" onclick="$('#card-out').toggle(200)"><i class="material-icons">face</i></a>
-    <div id="card-out">
-        <div class="card hoverable" id="emotion-card">
-            <div class="card-content">
-                <span class="card-title">Hangzhou, China</span>
-                <embed src="img/radar.svg" width="250" height="230" type="image/svg+xml"/>
-                <div class="switch">
-                    <label>
-                        Happy<input type="checkbox" checked="true" onchange="toggle_emotion('happiness')">
-                        <span class="lever"></span>
-                    </label>
-                    <label>
-                        Relaxed<input type="checkbox" onchange="toggle_emotion('relaxation')">
-                        <span class="lever"></span>
-                    </label>
-                </div>
-                <div class="switch">
-                    <label>
-                        Calm<input type="checkbox" onchange="toggle_emotion('calmness')">
-                        <span class="lever"></span>
-                    </label>
-                    <label>
-                        Anxious<input type="checkbox" onchange="toggle_emotion('anxiety')">
-                        <span class="lever"></span>
-                    </label>
-                </div>
-                <div class="switch">
-                    <label>
-                        Worry<input type="checkbox" onchange="toggle_emotion('worry')">
-                        <span class="lever"></span>
-                    </label>
-                </div>
+    <a id="emotion-but" class="btn-floating btn-large waves-effect waves-light red hoverable" onclick="$('#emotion-card').toggle(300)"><i class="material-icons">face</i></a>
+    <div class="card hoverable" id="emotion-card">
+        <div class="card-content">
+            <span class="card-title">Hangzhou, China</span>
+            <embed src="img/radar.svg" width="250" height="230" type="image/svg+xml"/>
+            <div class="switch">
+                <label>
+                    Happy<input type="checkbox" checked="true" onchange="toggle_emotion('happiness')">
+                    <span class="lever"></span>
+                </label>
+                <label>
+                    Relaxed<input type="checkbox" onchange="toggle_emotion('relaxation')">
+                    <span class="lever"></span>
+                </label>
             </div>
-            <div class="card-action">
-                <a href="https://en.wikipedia.org/wiki/Hangzhou" target="_blank">About City</a>
+            <div class="switch">
+                <label>
+                    Calm<input type="checkbox" onchange="toggle_emotion('calmness')">
+                    <span class="lever"></span>
+                </label>
+                <label>
+                    Anxious<input type="checkbox" onchange="toggle_emotion('anxiety')">
+                    <span class="lever"></span>
+                </label>
+            </div>
+            <div class="switch">
+                <label>
+                    Worry<input type="checkbox" onchange="toggle_emotion('worry')">
+                    <span class="lever"></span>
+                </label>
             </div>
         </div>
+        <div class="card-action">
+            <a href="https://en.wikipedia.org/wiki/Hangzhou" target="_blank">About City</a>
+        </div>
+    </div>
+    <div class="fixed-action-btn" id="other-fun">
+        <a class="btn-floating btn-large red pulse hoverable">
+            <i class="large material-icons">build</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red hoverable waves-effect waves-light tooltipped" data-position="right" data-delay="50" data-tooltip="Share your feeling" onclick="Materialize.toast('⁄(⁄ ⁄•⁄ω⁄•⁄Not implemented.', 4000, 'rounded')">
+                <i class="material-icons">favorite</i></a></li>
+            <li><a class="btn-floating yellow darken-1 waves-effect waves-light hoverable tooltipped" data-position="right" data-delay="50" data-tooltip="Route recommendation" onclick="Materialize.toast('⁄(⁄ ⁄•⁄ω⁄•⁄Not implemented.', 4000, 'rounded')">
+                <i class="material-icons">timeline</i></a></li>
+            <li><a class="btn-floating green waves-effect waves-light hoverable tooltipped" data-position="right" data-delay="50" data-tooltip="Where to go?" onclick="Materialize.toast('⁄(⁄ ⁄•⁄ω⁄•⁄Not implemented.', 4000, 'rounded')">
+                <i class="material-icons">add_location</i></a></li>
+            <li><a class="btn-floating blue waves-effect waves-light hoverable tooltipped" data-position="right" data-delay="50" data-tooltip="Toggle time editor" onclick="$('#time-card').toggle(300)">
+                <i class="material-icons">access_time</i></a></li>
+        </ul>
+    </div>
+    <div class="card hoverable" id="time-card">
+        <div class="card-content">
+            <span class="card-title">Emotion by time</span>
+            <form>
+                <p>
+                    <label>Date</label>
+                    <input type="date" class="datepicker" style="height:20px" value="2017-04-07">
+                </p>
+                <p class="range-field">
+                    <label>Time</label>
+                    <input type="range" min="0" max="24" />
+                </p>
+            </form>
+            <script>
+                $('.datepicker').pickadate({selectMonths: true, selectYears: 15});
+            </script>
+            <div class="card-action" style="float: right">
+                <a onclick="$('#time-card').toggle(300)" style="cursor:pointer">Close</a>
+            </div>
+        </div>
+        <script>
+            $('#time-card').hide();
+        </script>
     </div>
 </body>
 

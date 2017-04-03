@@ -4,15 +4,22 @@ body{
     overflow: hidden;
 }
 
+nav{
+    position: absolute;
+    top: 0;
+}
+
 .brand-logo{
     margin-left: 20px;
-    font-weight: 300;
+    font-weight: 100;
 }
 
 #map_container{
+    position: absolute;
     min-width: 200px;
     width: 100%;
     min-height: 100px;
+    bottom: 0;
 }
 
 #emotion-but{
@@ -27,7 +34,22 @@ body{
     bottom: 5px;
 }
 
+#time-card{
+    position: absolute;
+    padding-left: 50px;
+    left: 10px;
+    bottom: 5px;
+}
+
 .switch{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+#other-fun{
+    position: absolute;
+    left: 20px;
+    bottom: 30px;
+    text-align: center;
+    width: 60px;
 }
