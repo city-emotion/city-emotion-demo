@@ -32,7 +32,7 @@
         <li><a onclick="Materialize.toast('City Emotion Demo, Celestial Phineas @ ZJU (●\'ω\'●)丿❤', 4000, 'rounded')">About</a></li>
         <li><a href="https://github.com/celestialphineas/city-emotion-demo" target="_blank">Repo</a></li>
     </ul>
-    <a id="emotion-but" class="btn-floating btn-large waves-effect waves-light red hoverable" onclick="$('#emotion-card').toggle(300)"><i class="material-icons">face</i></a>
+    <a id="emotion-but" class="btn-floating btn-large waves-effect waves-light red pulse hoverable" onclick="$('#emotion-card').toggle(300)"><i class="material-icons">face</i></a>
     <div class="card hoverable" id="emotion-card">
         <div class="card-content">
             <span class="card-title">Hangzhou, China</span>
@@ -68,8 +68,9 @@
             <a href="https://en.wikipedia.org/wiki/Hangzhou" target="_blank">About City</a>
         </div>
     </div>
+    <script>$("#emotion-card").hide();</script>
     <div class="fixed-action-btn" id="other-fun">
-        <a class="btn-floating btn-large red pulse hoverable">
+        <a class="btn-floating btn-large red hoverable">
             <i class="large material-icons">build</i>
         </a>
         <ul>
@@ -103,10 +104,8 @@
                 <a onclick="$('#time-card').toggle(300)" style="cursor:pointer">Close</a>
             </div>
         </div>
-        <script>
-            $('#time-card').hide();
-        </script>
     </div>
+    <script>$('#time-card').hide();</script>
 </body>
 
 </html>
